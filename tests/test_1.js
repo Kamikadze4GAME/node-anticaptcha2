@@ -3,25 +3,28 @@
 const Anticaptcha = require('..');
 
 let a = new Anticaptcha('a33c8bc33086ecae2bc285fb9e8bdae3');
+let task = new Anticaptcha.NoCaptchaTask({url:'https://www.boards.ie/b/', sitekey: '6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0'});
+// a.test({a:'wefbhjnk'})
+// a.getBalance()
+// a.getQueueStats(1)
+// a.getTaskResult(70254143)
 
-let b = a.getBalance()
-// a.getTaskResult({taskId:7511931})
-// a.getQueueStats({queueId:20})
 // let taskId = 0;
 // a.createTask({
 //   task: {
 //     type: 'NoCaptchaTaskProxyless',
 //     websiteURL: 'https://www.boards.ie/b/',
 //     websiteKey: '6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0',
-//     // 7511931
+//     // 70254143
 //   }
 // })
 // .then(res => {
 //   console.log(res);
 //   taskId = res.taskId;
-//   console.log('taskId', taskId);
+//   console.log(new Date(), 'taskId', taskId);
 //   return a.getTaskResult2(taskId);
 // })
+a.solve(task)
 .then(_ => {
   console.log('res', _);
 })
