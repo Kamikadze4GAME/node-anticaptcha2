@@ -1,0 +1,38 @@
+{
+  "name": "anticaptcha2",
+  "version": "0.0.1",
+  "description": "A simple client to solve captchas using https://anti-captcha.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kamikadze4GAME/node-anticaptcha.git"
+  },
+  "keywords": [
+    "captcha",
+    "anti-captcha",
+    "captcha-solver",
+    "recaptcha",
+    "recaptcha2",
+    "recaptcahv2",
+    "funcaptcha",
+    "geecaptcha",
+    "imagecaptcha",
+    "anticaptcha"
+  ],
+  "author": "Ostap Skryshevskyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kamikadze4GAME/node-anticaptcha/issues"
+  },
+  "homepage": "https://github.com/Kamikadze4GAME/node-anticaptcha#readme",
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "clone": "^2.1.2",
+    "dotenv": "^6.1.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  }
+}
