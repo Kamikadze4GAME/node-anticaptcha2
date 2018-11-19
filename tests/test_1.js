@@ -3,7 +3,8 @@
 const Anticaptcha = require('..');
 
 let a = new Anticaptcha('a33c8bc33086ecae2bc285fb9e8bdae3');
-let task = new Anticaptcha.NoCaptchaTask({url:'https://www.boards.ie/b/', sitekey: '6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0'});
+
+let task = new Anticaptcha.NoCaptchaTask({url:'https://www.boards.ie/', sitekey: '6LfBixYUAAAAABhdHynFUIMA_sa4s-XsJvnjtgB0'});
 // a.test({a:'wefbhjnk'})
 // a.getBalance()
 // a.getQueueStats(1)
