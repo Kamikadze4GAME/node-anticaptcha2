@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kamikadze4GAME/node-anticaptcha.git"
+    "url": "git+https://github.com/Kamikadze4GAME/node-anticaptcha2.git"
   },
   "keywords": [
     "captcha",
@@ -25,9 +25,9 @@
   "author": "Ostap Skryshevskyi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Kamikadze4GAME/node-anticaptcha/issues"
+    "url": "https://github.com/Kamikadze4GAME/node-anticaptcha2/issues"
   },
-  "homepage": "https://github.com/Kamikadze4GAME/node-anticaptcha#readme",
+  "homepage": "https://github.com/Kamikadze4GAME/node-anticaptcha2#readme",
   "dependencies": {
     "bluebird": "^3.5.3",
     "clone": "^2.1.2",
