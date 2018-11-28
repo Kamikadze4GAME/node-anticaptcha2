@@ -1,4 +1,4 @@
 # TODO list
 
-[ ] Create FormBuilder
-[ ] Parse getTaskResult
+[ ] Some README.md improves
+[ ] Add support of `value`
