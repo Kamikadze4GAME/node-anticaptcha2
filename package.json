@@ -1,6 +1,6 @@
 {
   "name": "anticaptcha2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple client to solve captchas using https://anti-captcha.com",
   "main": "index.js",
   "scripts": {
