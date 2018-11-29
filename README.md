@@ -40,13 +40,13 @@ Before using this package you should recharge the balance and get API-key. Step 
 
 ## Anticaptcha
 
-TODO:
+[TODO: add text]
 
 ### `new Anticaptcha(apikey, [proxy])`
 
 The class creates an object that wraps the anti-captcha API.
 `apikey` - API key, which can be obtained in [account settings](https://anti-captcha.com/clients/settings/apisetup)
-`proxy` -  is an optional parameter that specifies the default proxy. TODO: ссыль
+`proxy` -  is an optional parameter that specifies the default proxy. See [`Proxy`](#new-proxyopts).
 
 ```js
 const Anticaptcha = require('anticaptcha2');
@@ -64,12 +64,12 @@ Method to get the default proxy. If no proxy is specified, it will return `null`
 ### `anticaptcha.setProxy(proxy)`
 
 Method to set the default proxy.
-`proxy` - either an instance of the class `Proxy` or an object with parameters like the class of `Proxy` (TODO: ссыль)
+`proxy` - either an instance of the class `Proxy` or an object with parameters like the class of [`Proxy`](#new-proxyopts)
 
 
 ### `anticaptcha.method(method, [data, [isPrivate]])`
 
-Method for calling the custom anti-captcha API method (TODO.). Returns `Promise`.
+Method for calling the custom anti-captcha API method. Returns `Promise`.
 
 - `method` - string method name
 - `data` - object with data. (*Default:* `{}`)
@@ -130,18 +130,18 @@ anticaptcha.getQueueStats(1)
 
 ### `anticaptcha.solve(task, [opts])`
 
-It's a fast and simple alias for methods [anticaptcha.createTask(task, opts)](TODO: ссыль) and [anticaptcha.getTaskResult(taskId)](TODO: ссыль).
+It's a fast and simple alias for methods [anticaptcha.createTask(task, opts)](#anticaptchacreatetasktask-opts) and [anticaptcha.getTaskResult(taskId)](#anticaptchagettaskresulttaskid-opts).
 
 
 ### `anticaptcha.createTask(task, [opts])`
 
 This method creates a task for solving selected captcha type. Returns ID of the created task.
 
-- `task` - task-object (plain object with key-values) or [`Task`](TODO: ссыль) instance.
+- `task` - task-object (plain object with key-values) or [`Task`](#new-taskopts-proxy) instance.
 - `opts` - optional `object` with extra params:
   - `softId` - ID of your application from out [AppCenter](https://anti-captcha.com/clients/tools/appcenter/top)
   - `languagePool` - Sets workers pool language. At the moment the following language pools are available: <br>**en** (default) - English language queue <br>**rn**  : group of countries: Russia, Ukraine, Belarus, Kazahstan
-  - `callbackUrl` -  web address were will send result of captcha/factory task processing. Contents are sent by AJAX POST request and are similar to the contents of getTaskResult (TODO: ссыль) method.
+  - `callbackUrl` -  web address were will send result of captcha/factory task processing. Contents are sent by AJAX POST request and are similar to the contents of [`anticaptcha.getTaskResult`](#anticaptchagettaskresulttaskid-opts) method.
 
 
 ### `anticaptcha.getTaskResult(taskId, [opts])`
@@ -382,7 +382,7 @@ For quick and easy use of api, use list of classes that implement all supported 
 - [`GeeTestTask`](#new-geetesttaskopts-proxy) - [GeeTest](https://www.geetest.com/en/)
 - [`FunCaptchaTask`](#new-funcaptchataskopts-proxy) - [FunCaptcha](https://funcaptcha.com)
 - [`SquareNetTextTask`](#new-squarenettexttaskopts) - Something like Google's pazzle (find bus on pictures), but too old
-- [`CustomCaptchaTask`](№new-customcaptchataskopts) - Custom tasks. TODO: more text
+- [`CustomCaptchaTask`](№new-customcaptchataskopts) - Custom tasks. [TODO: more text]
 
 
 ```js
@@ -422,7 +422,7 @@ Serialization task opts for API request.
 
 #### Result of task
 
-TODO:
+[TODO: add text]
 
 
 #### `new ImageToTextTask(opts)`
@@ -573,7 +573,7 @@ Examples:
 | ------------ | ------------- | -------- | -------- |
 | `url`        | `String`      | `yes`    | Address of an image |
 | `assignment` | `String`      | `no`     | Describe what worker must do in English |
-| `forms`      | `form/Object` | `no`     | Custom form object. It can be or JSON-object or instance of [`FormBuilder`](TODO: link) To build this object you have 3 options: <ul><li>Pass instance of `FormBuilder`</li><li>Use [FormBuilder](https://anti-captcha.com/clients/factories/directory/formbuilder) tool in Anti-Captcha clients area.</li><li>Code it manually using [documentation](https://anticaptcha.atlassian.net/wiki/x/2AB2Ag).</li></ul> |
+| `forms`      | `form/Object` | `no`     | Custom form object. It can be or JSON-object or instance of [`Form`](#new-form) To build this object you have 3 options: <ul><li>Pass instance of [`Form`](#new-form)</li><li>Use [FormBuilder](https://anti-captcha.com/clients/factories/directory/formbuilder) tool in Anti-Captcha clients area.</li><li>Code it manually using [documentation](https://anticaptcha.atlassian.net/wiki/x/2AB2Ag).</li></ul> |
 
 **Result:**
 
@@ -590,7 +590,7 @@ Examples:
 }
 ```
 
-TODO: !!!
+[TODO: add text]
 
 
 ---
@@ -598,7 +598,7 @@ TODO: !!!
 
 ## Form
 
-`Form` is created to create forms for [`СustomСapthcaTask`](TODO: ссыль). It has next fields:
+`Form` is created to create forms for [`CustomCaptchaTask`](#new-customcaptchataskopts). It has next fields:
 
 - [`TextField`](#new-textfieldlabel-text) - simple plain text.
 - [`LinkField`](#new-linkfieldlabel-url-text) - button-link (*HTML-tag:* `<a>`).
@@ -639,12 +639,11 @@ anticaptcha.solve(customTask).then(res => {
 });
 ```
 
-TODO: add image example
-
+[TODO: add image example]
 
 ### `new Form()`
 
-TODO: ???
+[TODO: add text]
 
 
 ### `form.add(field)`
@@ -667,7 +666,7 @@ Stringify `form` to JSON object according to [documentation](https://anticaptcha
 Some points:
 
 - For all `Field`s **first** argument is `label` - description for the form field or content. Its type  is `String` or `Array<String>` with two elements. If  you passed `Array` then first element will be label, second - subtitle for label. **Example:** `new TextField('Label')` and `new TextField(['Label', 'Subtitle'])`
-- For all *dynamic* fields (`TextboxField`, `CheckboxField`, etc.) **second** arguments is `name` - like `<input>` attribute `name`. It's used to get values of [`CustomCaptchaTask`](TODO: ссыль)'s answers . **Note:** It's must be unique!
+- For all *dynamic* fields (`TextboxField`, `CheckboxField`, etc.) **second** arguments is `name` - like `<input>` attribute `name`. It's used to get values of [`CustomCaptchaTask`](#new-customcaptchataskopts)'s answers . **Note:** It's must be unique!
 
 
 #### `new TextField(label, text)`
