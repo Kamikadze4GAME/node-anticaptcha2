@@ -19,6 +19,7 @@ A simple NodeJS package for solving almost all types of captchas using  [https:/
 - Solving almost all types of captcha ([reCAPTCHA](https://developers.google.com/recaptcha/docs/display), [GeeTest](https://www.geetest.com/en), [FunCaptcha](https://funcaptcha.com), [Classic image to text](https://en.wikipedia.org/wiki/CAPTCHA), [SquareNetTextTask](https://anticaptcha.atlassian.net/wiki/x/AQB4G)).
 - Easy creating and solving [custom tasks](https://anticaptcha.atlassian.net/wiki/x/KYApDg).
 - Support Proxy
+- Support Timeout
 - Full ...???
 
 
@@ -153,6 +154,7 @@ Request task result. If the task is not completed, the `status` will be `process
   - `extended` - If `true` method will return extended result of task (with `cost`, `ip` et.c.). Otherwise - only `solution`. (*Default:* `false`)
   - `wait` - set to `true` to wait for a solution of the task. (*Default:* `false`)
   - `waitTime` - if `wait` is `true`, then this parameter can specify timeouts to check the result of the task. It's an 2-elements `array`: first element - first request delay, second - second and next request. Numbers in `ms`. (*Defaults:* `[5000, 2000]` )
+  - `timeout` - Define max time to solve captcha. If function hit timeout, it throw `ERROR_TIMEOUT_HIT` error. Work only if `wait` is `true`. Numbers in `ms`. (*Defaults:* `false` )
 
 ```js
 // Task is not ready
